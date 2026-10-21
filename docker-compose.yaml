@@ -1,0 +1,9 @@
+services:
+    web:
+        build: .
+        ports: 
+          - "8000:8000" # host container at localhost:8000
+        volumes:
+          - ./data:/data # host ./data is mounted at /data in the container 
+        environment:
+          - DATA_DIR=/data # set location so app reads where to store files
